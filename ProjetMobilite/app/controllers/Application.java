@@ -22,8 +22,10 @@ public class Application extends Controller {
     	String clefSecrette = "JcJjofLw1w14DesR";
     	
     	String adresseSite = "www.projetIIDMobilite.fr"; //?
+    	String authorizationURL = "https://www.linkedin.com/uas/oauth2/authorization";
+    	String accesTokenURL = "https://www.linkedin.com/uas/oauth2/accessToken";
     	
-    	OAuth2 LINKEDIN = new OAuth2( );
+    	OAuth2 LINKEDIN = new OAuth2(authorizationURL, accesTokenURL, tokenUtilisateur, secretUtilisateur);
         if (OAuth2.isCodeResponse()) {
             // authUrl must be the same as the retrieveVerificationCode call
             OAuth2.Response response = LINKEDIN.retrieveAccessToken(authUrl);
